@@ -1,0 +1,43 @@
+<div class="main-wrapper account-wrapper">
+  <div class="account-page">
+    <div class="account-center">
+      <div class="account-box">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" }) do |f| %>
+            <div class="account-logo">
+                <img src=<%=  asset_url('logo-dark.png') %> alt="">
+            </div>
+            <div class="form-group">
+              <%= f.email_field :email, {
+                "class": "form-control",
+                "placeholder": "Usuario o email"
+              } %>
+            </div>
+            <div class="form-group">
+              <%= f.password_field :password, {
+                "class": "form-control",
+                "placeholder": "Contraseña"
+              } %>
+            </div>
+            <div class="form-group text-right">
+                <a href="forgot-password.html">Olvidó su contraseña?</a>
+            </div>
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me%>
+                <%= f.label :remember_me, "Recuérdame"  %>
+              </div>
+            <% end %>
+            <div class="form-group text-center">
+              <div class="actions">
+                <%= f.submit "Entrar",
+                  { "class": "btn btn-primary account-btn" } %>
+              </div>
+            </div>
+            <div class="text-center register-link">
+                No tiene una cuenta? <a href="register.html">Registrarse Ahora</a>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
