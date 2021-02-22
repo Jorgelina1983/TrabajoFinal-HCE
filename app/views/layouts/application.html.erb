@@ -9,12 +9,13 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href=<%= asset_url("favicon.ico") %> >
     <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href=<%= asset_url("bootstrap-datetimepicker.min.css") %>>
 
     <link rel="stylesheet" type="text/css" href=<%= asset_url("style.css") %> >
 
@@ -143,7 +144,7 @@
                             <a href="index-2.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						        <li>
-                            <a href="doctors.html"><i class="fa fa-user-md"></i> <span>Doctores</span></a>
+                            <a href="<%= doctors_path %>"><i class="fa fa-user-md"></i> <span>Doctores</span></a>
                         </li>
                         <li>
                             <a href="patients.html"><i class="fa fa-wheelchair"></i> <span>Pacientes</span></a>
