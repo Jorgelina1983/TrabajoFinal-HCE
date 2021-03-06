@@ -24,6 +24,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 gem 'cancancan'
+gem 'simple_form'
+gem 'bootstrap', '~> 5.0.0.beta2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

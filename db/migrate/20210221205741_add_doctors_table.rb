@@ -8,6 +8,10 @@ class AddDoctorsTable < ActiveRecord::Migration[6.0]
       t.string :phone
       t.date :dob
       t.string :avatar
+      t.references :users
+      t.string :gender
+      t.boolean :active
+      t.string :description
 
 
   		t.timestamps null: false
