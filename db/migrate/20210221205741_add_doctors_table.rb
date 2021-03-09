@@ -12,6 +12,7 @@ class AddDoctorsTable < ActiveRecord::Migration[6.0]
       t.string :gender
       t.boolean :active
       t.string :description
+      t.string :address
 
 
   		t.timestamps null: false

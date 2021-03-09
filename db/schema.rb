@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_205741) do
     t.string "gender"
     t.boolean "active"
     t.string "description"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["users_id"], name: "index_doctors_on_users_id"

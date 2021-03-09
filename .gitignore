@@ -87,3 +87,4 @@ build-iPhoneSimulator/
 yarn-debug.log*
 .yarn-integrity
 node_modules
+.tool-versions
