@@ -372,8 +372,8 @@ table.table td {
 }
 
 .badge-success-border {
-  border: 1px solid #55ce63;
-  color: #55ce63;
+  border: 1px solid #71dfa8;
+  color: #71dfa8;
   background-color: #fff;
   display: inline-block;
   min-width: 80px;
@@ -452,7 +452,7 @@ table.table td {
 }
 
 .bg-success, .badge-success {
-  background-color: #55ce63 !important;
+  background-color: #71dfa8 !important;
 }
 
 .bg-info, .badge-info {
@@ -476,7 +476,7 @@ table.table td {
 }
 
 .text-success, .dropdown-menu > li > a.text-success {
-  color: #55ce63;
+  color: #71dfa8;
 }
 
 .text-danger, .dropdown-menu > li > a.text-danger {
@@ -497,11 +497,11 @@ table.table td {
 
 .btn-primary {
   border-color: transparent;
-  background-color: #009efb;
+  background-color: #5AA897;
 
   &:hover, &:focus, &.active, &:active {
-    background-color: #009efb;
-    border: 1px solid #009efb;
+    background-color: #48d3c3;
+    border: 1px solid #48d3c3;
     color: #fff;
   }
 }
@@ -542,8 +542,8 @@ table.table td {
 
 .btn-primary {
   &.active:not(:disabled):not(.disabled), &:active:not(:disabled):not(.disabled) {
-    background-color: #009efb;
-    border-color: #009efb;
+    background-color: #21ae95;
+    border-color: #21ae95;
     color: #fff;
   }
 }
@@ -555,12 +555,12 @@ table.table td {
 }
 
 .btn-outline-primary {
-  border-color: #009efb;
-  color: #009efb;
+  border-color: #45526C;
+  color: #45526C;
 
   &:hover, &.active:not(:disabled):not(.disabled), &:active:not(:disabled):not(.disabled) {
-    background-color: #009efb;
-    border-color: #009efb;
+    background-color: #F8A488;
+    border-color: #F8A488;
     color: #fff;
   }
 }
@@ -572,8 +572,8 @@ table.table td {
 }
 
 .btn-success {
-  background-color: #55ce63;
-  border: 1px solid #55ce63;
+  background-color: #71dfa8;
+  border: 1px solid #71dfa8;
 
   &:hover, &:focus, &.active, &:active {
     background: #4ab657;
@@ -899,7 +899,7 @@ textarea.form-control {
 -----------------------*/
 
 .header {
-  background-color: #009efb;
+  background-color: #21ae95;
   left: 0;
   position: fixed;
   right: 0;
@@ -1075,19 +1075,20 @@ textarea.form-control {
 
   li {
     a {
-      color: #888;
+      color: #45526C;
       display: block;
       font-size: 15px;
       height: auto;
       padding: 0 20px;
+      text-decoration: none;
 
       &:hover {
-        color: #009efb;
+        color: #F8A488;
       }
     }
 
     &.active a {
-      color: #009efb;
+      color: #F8A488;
       background-color: #f3f3f3;
     }
   }
@@ -1423,7 +1424,7 @@ textarea.form-control {
   font-size: 50px;
   text-align: center;
   line-height: 65px;
-  background: #009efb;
+  background: #45526C;
   border-radius: 50%;
   font-size: 40px;
   height: 65px;
@@ -1437,7 +1438,7 @@ textarea.form-control {
   font-size: 50px;
   text-align: center;
   line-height: 65px;
-  background: #55ce63;
+  background: #5AA897;
   border-radius: 50%;
   font-size: 40px;
   height: 65px;
@@ -1451,7 +1452,7 @@ textarea.form-control {
   font-size: 50px;
   text-align: center;
   line-height: 65px;
-  background: #7a92a3;
+  background: #919da5;
   border-radius: 50%;
   font-size: 40px;
   height: 65px;
@@ -1465,7 +1466,7 @@ textarea.form-control {
   font-size: 50px;
   text-align: center;
   line-height: 65px;
-  background: #ffbc35;
+  background: #F8A488;
   border-radius: 50%;
   font-size: 40px;
   height: 65px;
@@ -1490,7 +1491,7 @@ textarea.form-control {
   }
 
   span {
-    color: #009efb;
+    color: #A5E1AD;
   }
 }
 
@@ -1624,7 +1625,7 @@ ul.chat-user-total li {
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: #ffbc35;
+          background-color: #F8A488;
           z-index: 5;
 
           > {
@@ -1644,7 +1645,7 @@ ul.chat-user-total li {
               top: 0;
               left: 0;
               height: 100%;
-              background-color: #009efb;
+              background-color: #48d3c3;
               z-index: 10;
 
               > .title {
@@ -1722,7 +1723,7 @@ ul.chat-user-total li {
 
   > span {
     &.widget-title1 {
-      background: #009efb;
+      background: #45526C;
       color: #fff;
       padding: 5px 10px;
       border-radius: 4px;
@@ -1730,7 +1731,7 @@ ul.chat-user-total li {
     }
 
     &.widget-title2 {
-      background: #55ce63;
+      background: #5AA897;
       color: #fff;
       padding: 5px 10px;
       border-radius: 4px;
@@ -1738,7 +1739,7 @@ ul.chat-user-total li {
     }
 
     &.widget-title3 {
-      background: #7a92a3;
+      background: #919da5;
       color: #fff;
       padding: 5px 10px;
       border-radius: 4px;
@@ -1746,7 +1747,7 @@ ul.chat-user-total li {
     }
 
     &.widget-title4 {
-      background: #ffbc35;
+      background: #F8A488;
       color: #fff;
       padding: 5px 10px;
       border-radius: 4px;
@@ -3928,6 +3929,7 @@ html.menu-opened {
 
   a {
     color: #333;
+    text-decoration: none;
   }
 }
 

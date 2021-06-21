@@ -1,12 +1,12 @@
 $(document).ready(function() {
-	
+
 	// Bar Chart
 
 	var barChartData = {
 		labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
 		datasets: [{
 			label: 'Dataset 1',
-			backgroundColor: 'rgba(0, 158, 251, 0.5)',
+			backgroundColor: 'rgba(0, 222, 251, 0.5)',
 			borderColor: 'rgba(0, 158, 251, 1)',
 			borderWidth: 1,
 			data: [35, 59, 80, 81, 56, 55, 40]
@@ -34,7 +34,7 @@ $(document).ready(function() {
 	// Line Chart
 
 	var lineChartData = {
-		labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+		labels: ["Jan", "Feb", "Mar", "Apr", "Masy", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
 		datasets: [{
 			label: "My First dataset",
 			backgroundColor: "rgba(0, 158, 251, 0.5)",
@@ -46,7 +46,7 @@ $(document).ready(function() {
 		data: [28, 48, 40, 19, 86, 27, 20, 90, 50, 20, 90, 20]
 		}]
 	};
-	
+
 	var linectx = document.getElementById('linegraph').getContext('2d');
 	window.myLine = new Chart(linectx, {
 		type: 'line',
@@ -62,15 +62,15 @@ $(document).ready(function() {
 			}
 		}
 	});
-	
+
 	// Bar Chart 2
-	
+
     barChart();
-    
+
     $(window).resize(function(){
         barChart();
     });
-    
+
     function barChart(){
         $('.bar-chart').find('.item-progress').each(function(){
             var itemProgress = $(this),

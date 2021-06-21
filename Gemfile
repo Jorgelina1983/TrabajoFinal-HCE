@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3'
+gem 'rails', '~> 6.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -28,6 +28,8 @@ gem 'simple_form'
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'font-awesome-sass', '~> 5.15.1'
+gem 'font_awesome5_rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
