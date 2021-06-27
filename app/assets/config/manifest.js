@@ -11,4 +11,5 @@
 //= link moment.min.js
 //= link select2.min.js
 //= link bootstrap-datetimepicker.min.js
+//= link application.js
 

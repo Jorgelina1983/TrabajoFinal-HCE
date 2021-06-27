@@ -88,5 +88,4 @@ yarn-debug.log*
 .yarn-integrity
 node_modules
 .tool-versions
-.DS_Store
 yarn.lock
