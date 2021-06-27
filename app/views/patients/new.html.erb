@@ -1,0 +1,20 @@
+  <div class="content">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h4 class="page-title">Agregar Paciente</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <%= simple_form_for @patient do |f| %>
+          <%= render "form", patient: @patient, f: f %>
+
+          <div class="m-t-20 text-center">
+            <button class="btn btn-primary submit-btn">Crear Paciente</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+

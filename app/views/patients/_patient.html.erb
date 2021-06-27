@@ -1,0 +1,31 @@
+ <tr>
+                      <td><img width="28" height="28" src=<%= asset_url('user.jpg') %> class="rounded-circle m-r-5" alt=""> <%= patient.full_name %> </td>
+                      <td><%= patient.dob %> </td>
+                      <td><%= patient.address %></td>
+                      <td><%= patient.phone %></td>
+                      <td><%= patient.email %></td>
+                      <td class="text-right">
+                        <div class="dropdown dropdown-action">
+                          <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href=<%= edit_patient_path(patient) %>><i class="fas fa-pencil-alt m-r-5"></i> Editar</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target=<%= "#delete_patient_#{patient.id}" %>><i class="fas fa-trash-alt"></i> Borrar</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+
+<div id=<%= "delete_patient_#{patient.id}" %> class="modal fade delete-modal" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src=<%= asset_url("sent.png") %> alt="" width="50" height="46">
+        <h3>Está seguro que desea borrar este Paciente?</h3>
+        <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Cerrar</a>
+          <%= link_to("Borrar", patient, method: :delete, class: "btn btn-danger") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
