@@ -25,6 +25,8 @@ class DoctorsController < ApplicationController
 
   def update
     if @doctor.update(doctor_params)
+			@doctor.update_attribute(:active, false) if (doctor_params.fetch(:active) == "Inactivo")
+
       flash[:success] = "Doctor editado existosamente"
       redirect_to doctors_path
     else

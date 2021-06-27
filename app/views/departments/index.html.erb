@@ -1,0 +1,32 @@
+<div class="content">
+	<div class="row">
+		<div class="col-sm-5 col-5">
+			<h4 class="page-title">Departmentos</h4>
+		</div>
+		<div class="col-sm-7 col-7 text-right m-b-30">
+			<a href=<%= new_department_path %> class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i> Agregar Departmento</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-striped custom-table mb-0 datatable">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Nombre</th>
+							<th>Descripcion</th>
+							<th>Estado</th>
+							<th class="text-right">Acción</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @departments.each do |department| %>
+							<%= render 'department', department: department %>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

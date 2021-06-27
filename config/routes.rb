@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :doctors
   resources :patients
+  resources :departments
 
   root "home#index"
 end
