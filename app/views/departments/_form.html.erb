@@ -12,7 +12,8 @@
 					as: :radio_buttons,
 					label_method: :last,
 					collection: [[true, "Activo"], [false, "Inactivo"]],
-					class: "form-control form-check-input"
+					input_html: { checked: department.active? },
+					class: "form-control form-check-input",
 				)
 			 %>
 		</div>

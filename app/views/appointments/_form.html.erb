@@ -1,0 +1,59 @@
+
+<div class="row">
+	<div class="col-lg-8 offset-lg-2">
+		 <div class="form-group">
+			<label>Paciente</label>
+			<%= f.select(:patient_id, options_for_select(Patient.all.map { |r| [r.full_name, r.id] }), { include_blank: "Selecione Paciente" }, { class: 'form-control select select2' }) %>
+		</div>
+	</div>
+		<div class="col-lg-8 offset-lg-2">
+		 <div class="form-group">
+		 	<label>Departamento</label>
+			<%= f.select(:department_id, options_for_select(Department.where(active: true).all.map { |r| [r.name, r.id] }), { include_blank: "Selecione Departamento" }, { class: 'form-control select select2' }) %>
+		</div>
+	</div>
+	<div class="col-lg-8 offset-lg-2">
+		<div class="form-group">
+		 	<label>Especialista</label>
+			<%= f.select(:doctor_id, options_for_select(Doctor.all.map { |r| [r.full_name, r.id] }), { include_blank: "Selecione Doctor" }, { class: 'form-control select select2' }) %>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+			<div class="form-group">
+					<label>Fecha</label>
+					<div class="cal-icon">
+							<%= f.input(:date, label: false, as: :string, input_html: { class: 'form-control datetimepicker' }) %>
+					</div>
+			</div>
+	</div>
+	<div class="col-md-6">
+			<div class="form-group">
+					<label>Hora</label>
+					<div class="time-icon">
+							<%= f.input(:time, label: false, as: :string, input_html: { class: 'form-control' }) %>
+					</div>
+			</div>
+			<div class="form-group">
+					<label>Duracion</label>
+					<div class="time-icon">
+							<%= f.input(:duration, label: false, as: :string, input_html: { class: 'form-control' }) %>
+					</div>
+			</div>
+	</div>
+	<div class="form-group">
+			<%= f.input(:notes, label: "Notas", as: :text, input_html: { class: 'form-control' }) %>
+	</div>
+		<div class="form-group">
+			<div class="form-check">
+					<%= f.input(:status,
+									label: "Estado de la consulta",
+									as: :radio_buttons,
+									label_method: :first,
+									collection: Appointment::STATUSES.map { |s| [s, s] },
+									input_html: { class: 'form-check-label', checked: appointment.status || nil }
+							)
+					%>
+			</div>
+		</div>
+</div>

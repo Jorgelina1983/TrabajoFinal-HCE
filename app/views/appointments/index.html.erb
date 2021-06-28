@@ -1,0 +1,35 @@
+<div class="content">
+	<div class="row">
+			<div class="col-sm-4 col-3">
+					<h4 class="page-title">Consultas</h4>
+			</div>
+			<div class="col-sm-8 col-9 text-right m-b-20">
+					<a href=<%= new_appointment_path %> class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Nueva Consulta</a>
+			</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-striped custom-table">
+					<thead>
+						<tr>
+							<th>Paciente</th>
+							<th>Edad</th>
+							<th>Doctor</th>
+							<th>Departmento</th>
+							<th>Fecha </th>
+							<th>Hora</th>
+							<th>Estado</th>
+							<th class="text-right">Acción</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @appointments.each do |appointment| %>
+							<%= render 'appointment', appointment: appointment %>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

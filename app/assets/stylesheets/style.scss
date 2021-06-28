@@ -337,7 +337,7 @@ table.table td {
 
 .cal-icon {
   &:after {
-    background: transparent url("../img/calander.png") no-repeat scroll 0 0;
+    background: transparent asset_url('calander.png') no-repeat scroll 0 0;
     bottom: 0;
     content: "";
     display: block;
@@ -355,7 +355,7 @@ table.table td {
 
 .time-icon {
   &:after {
-    background: transparent url("../img/clock.png") no-repeat scroll 0 0;
+    background: transparent asset_url('clock.png') no-repeat scroll 0 0;
     bottom: 0;
     content: "";
     display: block;
