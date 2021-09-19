@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   resources :doctors
   resources :patients
   resources :departments
-	resources :appointments
+  resources :appointments
+  resources :import_export
 
   root "home#index"
 end
