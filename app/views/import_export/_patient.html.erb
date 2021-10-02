@@ -1,0 +1,13 @@
+ <tr>
+    <td><img width="28" height="28" src=<%= asset_url('user.jpg') %> class="rounded-circle m-r-5" alt=""> <%= patient.full_name %> </td>
+    <td><%= patient.dob %> </td>
+    <td><%= patient.address %></td>
+    <td><%= patient.phone %></td>
+    <td><%= patient.email %></td>
+    </td>
+    <td >
+    <a href=<%= export_path %> class="btn btn-primary" style="background:#919da5;"><i class="fa fa-plus"></i>
+        <span class="widget-title3">Exportar<i class="fa fa-check" aria-hidden="true"></i></span>
+    </a>
+    </td>
+</tr>

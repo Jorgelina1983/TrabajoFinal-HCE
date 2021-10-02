@@ -1,0 +1,50 @@
+
+
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4 col-3">
+                        <h4 class="page-title">Pacientes</h4>
+                    </div>
+                </div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-responsive">
+							<table class="table table-border table-striped custom-table datatable mb-0">
+								<thead>
+									<tr>
+										<th>Nombre</th>
+										<th>Edad</th>
+										<th>Dirección</th>
+										<th>Teléfono</th>
+										<th>Email</th>
+										<th class="text-right">Acción</th>
+									</tr>
+								</thead>
+								<tbody>
+                                    <% @patients.each do |patient| %>
+                                        <%= render 'patient', patient: patient %>
+                                    <% end %>
+								</tbody>
+							</table>
+						</div>
+					</div>
+                </div>
+            </div>
+
+<br/> <br/>
+<div class="content">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h4 class="page-title">Paciente HL7 FHIR</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <%= simple_form_for :patient, url: import_export_index_path do |f| %>
+
+                    <%= f.text_area :first_name, class: "form-control", rows: 20 %>
+                <% end %>
+            </div>
+        </div>
+    </div>

@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   resources :appointments
   resources :import_export
 
+  get 'import_export/export', to: 'import_export#export', as: 'export'
+
   root "home#index"
 end

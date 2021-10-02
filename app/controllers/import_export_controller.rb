@@ -6,11 +6,11 @@ class ImportExportController < ApplicationController
   end
 
   def new
-
+    @patient = Patient.new
   end
 
   def create
-    @doctor = Doctor.new(doctor_params)
+    @patient = create_patient_from_fhir(import_export_params)
 
     if @doctor.valid?
       @doctor.save
@@ -22,26 +22,21 @@ class ImportExportController < ApplicationController
   end
 
   def update
-    if @doctor.update(doctor_params)
-			@doctor.update_attribute(:active, false) if (doctor_params.fetch(:active) == "Inactivo")
+  end
 
-      flash[:success] = "Doctor editado existosamente"
-      redirect_to doctors_path
-    else
-      render :edit, doctor: @doctor
-    end
+  def show
+    @patients = Patient.all
   end
 
   def destroy
-    @doctor.destroy
-    flash[:success] = "Doctor eliminado"
-    redirect_to doctors_path
+  end
+
+  def export
   end
 
   private
 
   def set_doctor
-    @doctor = Doctor.find(params[:id])
   end
 
   def doctor_params
