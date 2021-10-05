@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :import_export
 
   get 'import_export/export', to: 'import_export#export', as: 'export'
+  get 'import_export/export/:id', to: 'import_export#export', as: 'export_patient'
 
   root "home#index"
 end

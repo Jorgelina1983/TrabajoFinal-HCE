@@ -1,3 +1,4 @@
+
     <% flash.each do |type, msg| %>
         <div class="<%= "alert alert-#{type}" %>" role="alert">
             <%= msg %>
@@ -47,7 +48,7 @@
             <div class="col-lg-8 offset-lg-2">
                 <%= simple_form_for :patient, url: import_export_index_path do |f| %>
 
-                    <%= f.text_area :first_name, class: "form-control", rows: 20 %>
+                    <%= f.text_area :first_name, class: "form-control", rows: 20, value: @patient_value %>
                 <% end %>
             </div>
         </div>
