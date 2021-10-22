@@ -1,0 +1,21 @@
+<tr>
+	<td><img width="28" height="28" src=<%= asset_url("user.jpg") %> class="rounded-circle m-r-5" alt=""> <%= appointment.patient.full_name %></td>
+	<td><%= appointment.doctor.full_name %></td>
+	<td><%= appointment.department.name %></td>
+	<td><%= appointment.date %></td>
+	<td><%= appointment.time %></td>
+	<td><%= appointment.duration %></td>
+	<td>
+		<% case appointment.status %>
+		<% when "Pendiente" %>
+			<span class="custom-badge status-green">Pendiente</span></td>
+		<% when "Iniciada" %>
+			<span class="custom-badge status-orange">Iniciada</span></td>
+		<% when "Terminada" %>
+			<span class="custom-badge status-blue">Terminada</span></td>
+		<% when "Cancelada" %>
+			<span class="custom-badge status-red">Cancelada</span></td>
+		<% end %>
+</tr>
+
+

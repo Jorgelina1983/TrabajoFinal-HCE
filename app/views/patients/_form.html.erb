@@ -1,57 +1,176 @@
-
-<div class="row">
-    <div class="col-sm-6">
-        <div class="form-group">
-            <%= f.input(:first_name, label: "Nombre", required: true, class: "form-control") %>
+<ul class="nav nav-pills mb-3" id="myTab" role="tablist" style="color: red;">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active item" id="home-tab" data-bs-toggle="tab" data-bs-target="#demograficos" type="button" role="tab" aria-controls="home" aria-selected="true">Demograficos</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link item" id="profile-tab" data-bs-toggle="tab" data-bs-target="#alergias" type="button" role="tab" aria-controls="profile" aria-selected="false">Alergias</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link item" id="contact-tab" data-bs-toggle="tab" data-bs-target="#cirugias" type="button" role="tab" aria-controls="contact" aria-selected="false">Cirugias</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link item" id="contact-tab" data-bs-toggle="tab" data-bs-target="#medicaciones" type="button" role="tab" aria-controls="contact" aria-selected="false">Medicaciones</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link item" id="contact-tab" data-bs-toggle="tab" data-bs-target="#consultas" type="button" role="tab" aria-controls="contact" aria-selected="false">Consultas</button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="demograficos" role="tabpanel" aria-labelledby="home-tab">
+     <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= f.input(:first_name, label: "Nombre", required: true, class: "form-control") %>
+            </div>
         </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            <%= f.input(:last_name, label: "Apellido", class: "form-control") %>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= f.input(:last_name, label: "Apellido", class: "form-control") %>
+            </div>
         </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            <%= f.input :email, label: "Email", required: true, class: "form-control" %>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= f.input :email, label: "Email", required: true, class: "form-control" %>
+            </div>
         </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="form-group">
-                    <%= f.input(:address, label: "Dirección", class: "form-control") %>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <%= f.input(:address, label: "Dirección", class: "form-control") %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= f.input(:phone, label: "Teléfono", class: "form-control")%>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= f.input(:identification, label: "DNI", class: "form-control") %>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= f.input(:dob, label: "Fecha de Nacimiento", hint: "YYYY/MM/dd", required: true, class: "form-control", start_year: Time.now.year - 90) %>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <div class="form-check">
+                    <%= f.input(:gender,
+                            label: "Género",
+                            as: :radio_buttons,
+                            label_method: :last,
+                            collection: [[false, "Femenino"], [false, "Masculino"]],
+                            class: "form-control form-check-input"
+                        )
+                    %>
                 </div>
             </div>
         </div>
     </div>
+  </div>
+  <div class="tab-pane fade" id="alergias" role="tabpanel" aria-labelledby="profile-tab">
     <div class="col-sm-6">
         <div class="form-group">
-            <%= f.input(:phone, label: "Teléfono", class: "form-control")%>
+            <%= f.input(:allergies, label: "Alergias y severidad", as: :text, input_html: { class: 'form-control', value: " " }) %>
         </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            <%= f.input(:identification, label: "DNI", class: "form-control") %>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            <%= f.input(:dob, label: "Fecha de Nacimiento", hint: "YYYY/MM/dd", required: true, class: "form-control", start_year: Time.now.year - 90) %>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            <div class="form-check">
-                <%= f.input(:gender,
-                        label: "Género",
-                        as: :radio_buttons,
-                        label_method: :last,
-                        collection: [[false, "Femenino"], [false, "Masculino"]],
-                        class: "form-control form-check-input"
-                    )
-                %>
-            </div>
-        </div>
-    </div>
-</div>
+        <div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-striped custom-table">
+					<tbody>
+						<% @patient.allergies.each do |allergy| %>
+                            <tr>
+                                <td><%= allergy.name %></td>
+                                <td>
+                                    <% case allergy.severity %>
+                                    <% when "baja" %>
+                                        <span class="custom-badge status-green">Baja</span></td>
+                                    <% when "media" %>
+                                        <span class="custom-badge status-orange">Media</span></td>
+                                    <% when "alta" %>
+                                        <span class="custom-badge status-red">Alta</span></td>
+                                    <% end %>
+                                </td>
+                            </tr>
+                        <% end %>
+					</tbody>
+				</table>
+			</div>
+		</div>
 
+    </div>
+  </div>
+  <div class="tab-pane fade" id="cirugias" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <%= f.input(:surgeries, label: "Cirugias y fecha(dd/mm/YYYY)", input_html: { class: 'form-control', value: " " }) %>
+        </div>
+        <div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-striped custom-table">
+					<tbody>
+						<% @patient.surgeries.each do |allergy| %>
+                            <tr>
+                                <td><%= allergy.name %></td>
+                                <td><%= allergy.time %></td>
+                            </tr>
+                        <% end %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+    </div>
+  </div>
+  <div class="tab-pane fade" id="medicaciones" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <%= f.input(:medications, label: "Medicacion y dosis", input_html: { class: 'form-control', value: " " }) %>
+        </div>
+        <div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-striped custom-table">
+					<tbody>
+						<% @patient.medications.each do |allergy| %>
+                            <tr>
+                                <td><%= allergy.name %></td>
+                            </tr>
+                        <% end %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+    </div>
+  </div>
+  <div class="tab-pane fade" id="consultas" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="row">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-striped custom-table">
+					<thead>
+						<tr>
+							<th>Doctor</th>
+							<th>Departmento</th>
+							<th>Fecha </th>
+							<th>Hora</th>
+							<th>Estado</th>
+							<th>Duracion</th>
+                            <th>Estado</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @patient.appointments.each do |appointment| %>
+							<%= render 'appointment', appointment: appointment %>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
