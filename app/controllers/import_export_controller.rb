@@ -8,13 +8,12 @@ class ImportExportController < ApplicationController
   def create
     @patient = create_patient_from_fhir(import_export_params[:first_name])
 
-    byebug
     if @patient.valid?
       @patient.save
       flash[:success] = "El paciente ha sido importado exitosamente"
       redirect_to export_path
     else
-      flash[:success] = "El paciente no ha podido ser importado"
+      flash[:warning] = "El paciente no ha podido ser importado"
       render :new
     end
   end
@@ -34,6 +33,7 @@ class ImportExportController < ApplicationController
 
   def create_patient_from_fhir(data)
     patient = Patient.new
+    return patient if data.blank?
     data_parsed =  JSON.parse(data)
 
     patient.first_name = data_parsed["name"][0]["given"][0]

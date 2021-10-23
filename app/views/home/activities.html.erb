@@ -1,0 +1,35 @@
+<div class="content">
+    <div class="row">
+        <div class="col-sm-4 col-3">
+            <h4 class="page-title">Registro de actividades de usuarios del HCE Siglo21</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped custom-table">
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Evento</th>
+                            <th>Usuario</th>
+                            <th>Tipo</td>
+                            <th>Fecha </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @activities.each do |act| %>
+                            <tr>
+                                <td> <%= act[:patient] %> </td>
+                                <td> <%= act[:event] %> </td>
+                                <td> <%= act[:user] %> </td>
+                                <td> <%= act[:type] %> </td>
+                                <td> <%= act[:date] %> </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
