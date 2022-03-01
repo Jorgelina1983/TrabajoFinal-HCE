@@ -38,7 +38,7 @@ gem 'font_awesome5_rails'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'world-flags', github: 'kristianmandrup/world-flags', branch: 'master'
 gem 'mini_magick'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'jquery-rails'
 
 group :development, :test do
